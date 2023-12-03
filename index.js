@@ -21,6 +21,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/ping", (req, res) => {
+  res.status(200).send("pong");
+});
+
 app.use(cors());
 
 const server = http.createServer(app);
